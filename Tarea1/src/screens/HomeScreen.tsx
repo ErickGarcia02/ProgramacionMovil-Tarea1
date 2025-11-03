@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/StackNavigator';
 import { useNavigation } from '@react-navigation/native';
@@ -9,30 +9,65 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<
   'HomeScreen'
 >;
 
-
 export default function HomeScreen() {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Bienvenido al HomeScreen</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Ejercicios tarea 1
+      </Text>
 
-      <Button
-        title="Ir a Ejercicio 1"
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Ejercicio1')}
-      />
-      <Button
-        title="Ir a Ejercicio 2"
+      >
+        <Text style={styles.buttonText}>Ejercicio 1</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Ejercicio2')}
-      />
-      <Button
-        title="Ir a Ejercicio 3"
+      >
+        <Text style={styles.buttonText}>Ejercicio 2</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Ejercicio3')}
-      />
-      <Button
-        title="Ir a Ejercicio 4"
+      >
+        <Text style={styles.buttonText}>Ejercicio 3</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Ejercicio4')}
-      />
+      >
+        <Text style={styles.buttonText}>Ejercicio 4</Text>
+      </TouchableOpacity>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#2196F3',
+    paddingVertical: 12,
+    paddingHorizontal: 25,
+    borderRadius: 10,
+    marginVertical: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+});
