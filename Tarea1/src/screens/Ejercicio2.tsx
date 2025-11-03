@@ -18,36 +18,55 @@ export default function CustomInput(){
     },[contador]);
     
 return(
-<View style={styles.general}>
-    <Text>contador: {contador}</Text>
-    <TouchableOpacity onPress={onPress}>
-      <Text>Presioname para aumentar el contador! :D</Text> 
+<View style={styles.container}>
+    <Text style={styles.contador}>contador: {contador}</Text>
+    <TouchableOpacity onPress={onPress} style={styles.botoncito}> 
+      <Text style={styles.textfinal}>Presioname para aumentar el contador! :D</Text> 
     </TouchableOpacity>
-    {triggerMod && <Text>Ha alcanzado un múltiplo de 5</Text>}
+    {triggerMod && <Text style={styles.multiplo}>Ha alcanzado un múltiplo de 5</Text>}
     </View>
 
 )
     
 }
 
+
 const styles = StyleSheet.create(
     {
-        general:{
-        margin: 30,
-        justifyContent: 'center',
-        textAlign:"center",
-        backgroundColor: "#eaeaeaff",
-        flex: 1
-        }, 
-        text:{
-        color: "red"    
-        }, 
-        input:{
-            borderColor: "#000000ff", 
-            borderRadius: 50,
-            borderWidth: 1,
-            textAlign: 'center',
-            margin: 10
-        }
+    container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    backgroundColor: "#e6f1fc"
+    }, 
+    contador:{
+    color: "#031b2fff",
+    fontSize:30,
+    justifyContent: 'center'
+    }, 
+    textfinal:{
+    color: '#f5f9fbff',
+    fontSize:17,
+    justifyContent: 'center',
+    paddingTop:5
+    },
+    botoncito:{
+    backgroundColor: '#031b2fff',
+    paddingVertical: 12,
+    paddingHorizontal: 25,
+    borderRadius: 10,
+    marginTop: 20,
+    height: 60,
+    },
+    multiplo:{
+    color: '#031b2fff',
+    fontSize:22,
+    justifyContent: 'center',
+    paddingTop:5,
+    fontWeight:'bold',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'dashed'
+    }
     }
 )

@@ -54,20 +54,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
+    backgroundColor: "#e6f1fc"
   },
   title: {
-    fontSize: 20,
+    fontSize: 40,
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#031b2fff',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 10,
-    marginVertical: 8,
+    marginTop: 20,
+    height: 60,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
-  },
+    fontSize: 25,
+  },  
 });

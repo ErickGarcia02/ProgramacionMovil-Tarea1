@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TextInput } from "react-native";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function Ejercicio3(){
 
@@ -13,8 +13,25 @@ export default function Ejercicio3(){
     },[]);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>{horaActual.getHours().toString().padStart(2,"0")}:{horaActual.getMinutes().toString().padStart(2,"0")}:{horaActual.getSeconds().toString().padStart(2,"0")}</Text>
+    <View style={styles.container}>
+      <Text style={styles.hora}>{horaActual.getHours().toString().padStart(2,"0")}:{horaActual.getMinutes().toString().padStart(2,"0")}:{horaActual.getSeconds().toString().padStart(2,"0")}</Text>
     </View>
   );
 }
+
+
+const styles = StyleSheet.create(
+    {
+    container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    backgroundColor: "#e6f1fc"
+    },
+    hora:{
+      fontSize:50,
+      color:'#031b2fff'
+    }
+    }
+)
